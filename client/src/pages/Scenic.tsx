@@ -13,35 +13,19 @@ interface Park {
 
 const galleryImages: Record<string, string[]> = {
   macritchie: [
-    "https://images.unsplash.com/photo-1626078302214-2734953673d6?q=80&w=800&auto=format&fit=crop", // MacRitchie specific
-    "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=800&auto=format&fit=crop", // Nature
-    "https://images.unsplash.com/photo-1533241241368-7f362925283c?q=80&w=800&auto=format&fit=crop", // Bridge/Nature
+    "/images/macritchie.png",
   ],
   bukittimah: [
-    "https://images.unsplash.com/photo-1632972768860-5c2724137023?q=80&w=800&auto=format&fit=crop", // Bukit Timah
-    "https://images.unsplash.com/photo-1449157291145-7efd4cf87e1e?q=80&w=800&auto=format&fit=crop", // Forest
-    "https://images.unsplash.com/photo-1518182170546-0766bc6e9236?q=80&w=800&auto=format&fit=crop", // Trail
+    "/images/bukit_timah.jpg",
   ],
   railcorridor: [
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=800&auto=format&fit=crop", // Rail track
-    "https://images.unsplash.com/photo-1470137430626-983a37b8ea46?q=80&w=800&auto=format&fit=crop", // Greenery
-    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop", // Nature
+    "/images/rail_corridor.png",
   ],
   coneyisland: [
-    "https://images.unsplash.com/photo-1669286598887-8617d1857583?q=80&w=800&auto=format&fit=crop", // Coney Island
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop", // Beach
-    "https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=800&auto=format&fit=crop", // Coastal
+    "/images/coney_island.png",
   ],
-  sungeibuloh: [
-    "https://images.unsplash.com/photo-1634488385849-b95663e90927?q=80&w=800&auto=format&fit=crop", // Sungei Buloh
-    "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=800&auto=format&fit=crop", // Wetland
-    "https://images.unsplash.com/photo-1589556264800-08ae9e129a8c?q=80&w=800&auto=format&fit=crop", // Mangrove
-  ],
-  labrador: [
-    "https://images.unsplash.com/photo-1623266663148-3a1985270c84?q=80&w=800&auto=format&fit=crop", // Coastal/Park
-    "https://images.unsplash.com/photo-1505144808419-1957a94ca61e?q=80&w=800&auto=format&fit=crop", // Nature
-    "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=800&auto=format&fit=crop", // Scenic
-  ],
+  sungeibuloh: [], // Waiting for user images
+  labrador: [], // Waiting for user images
 };
 
 export default function Scenic() {
@@ -96,7 +80,7 @@ export default function Scenic() {
                 </CardHeader>
                 <CardContent className="pt-6 space-y-6">
                   <div className="space-y-4">
-                    {park.scenic.map((highlight, idx) => {
+                    {(park.scenic || []).map((highlight, idx) => {
                       const [title, ...descParts] = highlight.split(" - ");
                       const description = descParts.join(" - ");
 

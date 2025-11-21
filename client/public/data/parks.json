@@ -2,144 +2,152 @@
   {
     "id": "macritchie",
     "name": "MacRitchie Reservoir",
-    "overview": "Singapore's oldest and largest reservoir, built in 1867, featuring 12 hectares of lush nature trails and the iconic TreeTop Walk suspension bridge through the Central Catchment Nature Reserve.",
+    "overview": "Singapore's oldest reservoir, MacRitchie is a playground for nature lovers and exercise enthusiasts. It anchors the Central Catchment Nature Reserve and is known for its hiking trails, pontoon bridge, and the TreeTop Walk.",
     "difficulty": "Moderate",
     "duration": "2-4 hours",
     "amenities": [
-      "Toilets",
-      "Water fountains",
-      "Shelters",
-      "Kayak rental"
+      "Restrooms",
+      "Water Coolers",
+      "Cafe",
+      "Kayak Rental",
+      "Parking"
     ],
-    "transport": {
-      "mrt": "Caldecott Station (Circle/Thomson-East Coast Lines), then 15-minute walk",
-      "bus": "Buses 52, 74, 93, 132, 157, 165, 166 to Venus Drive or Lornie Road",
-      "car": "Free parking at Venus Drive carpark and multi-storey carpark (7 AM - 7 PM)"
-    },
+    "transport": "Bus 132, 165, 166, 167, 855, 980 to Lornie Road",
     "scenic": [
-      "TreeTop Walk - 250m free-standing suspension bridge at 25m height with canopy views",
-      "Jelutong Tower - 7-storey observation tower overlooking the reservoir"
+      "HSBC TreeTop Walk - A 250m one-way suspension bridge through the rainforest canopy with panoramic views.",
+      "Jelutong Tower - A 7-deck observation tower offering a view of the forest canopy.",
+      "Chemperai Boardwalk - Scenic boardwalk skirting the edge of the reservoir with easy waterside walking."
     ],
     "mapUrl": "https://maps.app.goo.gl/MacRitchieReservoir",
-    "hours": "7:00 AM - 7:00 PM daily (TreeTop Walk closed on Mondays)"
+    "hours": "7:00 AM - 7:00 PM daily (TreeTop Walk closed Mondays)",
+    "coordinates": {
+      "lat": 1.3436,
+      "lng": 103.8311
+    },
+    "image": "/images/macritchie.png"
   },
   {
     "id": "bukittimah",
     "name": "Bukit Timah Nature Reserve",
-    "overview": "Singapore's highest natural point at 163 meters, this 163-hectare ASEAN Heritage Park preserves the largest primary rainforest fragment with 40% of Singapore's flora and fauna species.",
+    "overview": "Home to Singapore's highest hill, this reserve contains one of the few areas of primary rainforest left in the country. It offers challenging trails and a rich diversity of flora and fauna.",
     "difficulty": "Hard",
-    "duration": "1.5-3 hours",
+    "duration": "1-3 hours",
     "amenities": [
-      "Toilets",
-      "Visitor Centre",
-      "Shelters",
-      "Water coolers"
+      "Visitor Center",
+      "Restrooms",
+      "Vending Machines"
     ],
-    "transport": {
-      "mrt": "Beauty World or Sixth Avenue Station, then bus or 20-minute walk",
-      "bus": "Buses 67, 75, 170, 173, 184, 852, 961 along Bukit Timah Road",
-      "car": "Limited parking at Hindhede Drive entrance (6 AM - 7 PM)"
-    },
+    "transport": "Beauty World MRT (DT5), Exit A",
     "scenic": [
-      "Summit Trail - Climb to Singapore's highest peak at 163.63m for achievement satisfaction",
-      "Eco-Link@BKE - Southeast Asia's first ecological bridge connecting forests"
+      "Bukit Timah Hill Summit - Singapore’s highest natural peak at about 163 m, reached via several steep forest trails.",
+      "Hindhede Quarry - Family-friendly loop with a dramatic cliff-and-lake viewpoint right beside the visitor centre.",
+      "Primary Rainforest - One of Singapore’s last patches of primary rainforest, rich in dipterocarp trees and native wildlife."
     ],
     "mapUrl": "https://maps.app.goo.gl/BukitTimahNatureReserve",
-    "hours": "7:00 AM - 7:00 PM daily"
+    "hours": "7:00 AM - 7:00 PM daily",
+    "coordinates": {
+      "lat": 1.3541,
+      "lng": 103.7769
+    },
+    "image": "/images/bukit_timah.jpg"
   },
   {
     "id": "railcorridor",
-    "name": "Rail Corridor (Central)",
-    "overview": "A 4km heritage trail along the former Malayan Railway line, connecting Hillview to Bukit Timah Railway Station through scenic bridges and lush greenery with rustic charm.",
+    "name": "Rail Corridor",
+    "overview": "A former railway line transformed into a continuous green passage that runs through the island. It's a popular spot for walking, running, and cycling, connecting various green spaces.",
     "difficulty": "Easy",
-    "duration": "1-2 hours",
+    "duration": "2-5 hours",
     "amenities": [
-      "Toilets at access points",
-      "9 Mile Platform rest area",
-      "Reflector distance markers"
+      "Restrooms (at access points)",
+      "Shelters"
     ],
-    "transport": {
-      "mrt": "Hillview Station Exit B (wheelchair accessible) or multiple access points",
-      "bus": "Various routes to Hillview, Bukit Timah, or Dairy Farm areas",
-      "car": "Parking available at The Rail Mall (charges apply)"
-    },
+    "transport": "King Albert Park MRT (DT6) or Hillview MRT (DT3)",
     "scenic": [
-      "Upper Bukit Timah Truss Bridge - Iconic steel truss bridge with forest views",
-      "Bukit Timah Railway Station - Historic 1930s station building and heritage site"
+      "Historic Truss Bridges - Iconic steel truss railway bridge over Bukit Timah and Dunearn Roads, a classic photo spot.",
+      "Bukit Timah Railway Station - Conserved heritage station buildings serving as a key access point.",
+      "Clementi Forest - View of the misty jungle from the corridor."
     ],
-    "mapUrl": "https://maps.app.goo.gl/RailCorridorCentral",
-    "hours": "Open 24/7 (Not lit at night, leave before dark recommended)"
+    "mapUrl": "https://maps.app.goo.gl/RailCorridor",
+    "hours": "Open 24/7 (Not lit at night, leave before dark recommended)",
+    "coordinates": {
+      "lat": 1.3343,
+      "lng": 103.7811
+    },
+    "image": "/images/rail_corridor.png"
   },
   {
     "id": "coneyisland",
     "name": "Coney Island",
-    "overview": "An 81-hectare coastal island park with rustic beaches, mangrove boardwalks, and rich wildlife including 80+ bird species, accessible via a scenic promenade walk from Punggol.",
+    "overview": "A rustic, ecologically sustainable park with a wide variety of habitats, including coastal forests, grasslands, mangroves, and casuarina woodlands. It's great for cycling and bird watching.",
     "difficulty": "Easy",
-    "duration": "1.5-2.5 hours",
+    "duration": "1-2 hours",
     "amenities": [
-      "One eco-toilet",
-      "Casuarina playground",
-      "Beaches"
+      "Restrooms",
+      "Shelters"
     ],
-    "transport": {
-      "mrt": "Punggol Station, then Bus 84 to Punggol Road End, walk 500m along promenade",
-      "bus": "Bus 84 from Punggol MRT to access point",
-      "car": "Parking at Punggol Settlement, then 10-minute walk to island entrance"
-    },
+    "transport": "Punggol Point LRT (PW3), then walk 500m",
     "scenic": [
-      "5 Coastal Beaches (A-E) - Peaceful sandy shores with Johor Strait views",
-      "Mangrove Boardwalk - Wooden walkway through coastal mangroves between Beaches B & C"
+      "Coastal Trails - Rustic trails and quiet beaches along the Johor Strait.",
+      "Casuarina Woodlands - Groves that support diverse birds and wildlife in a wild-feeling setting.",
+      "Haw Par Beach Villa - Atmospheric remains of old structures viewable from the paths."
     ],
-    "mapUrl": "https://maps.app.goo.gl/ConeyIslandPark",
-    "hours": "7:00 AM - 7:00 PM daily (Gates close at 7 PM)"
+    "mapUrl": "https://maps.app.goo.gl/ConeyIsland",
+    "hours": "7:00 AM - 7:00 PM daily (Gates close at 7 PM)",
+    "coordinates": {
+      "lat": 1.3461,
+      "lng": 103.8778
+    },
+    "image": "/images/coney_island.png"
   },
   {
     "id": "sungeibuloh",
     "name": "Sungei Buloh Wetland Reserve",
-    "overview": "A 202-hectare internationally significant wetland sanctuary with 150+ bird species, featuring coastal trails, mangrove boardwalks, and seasonal migratory bird viewing from August to April.",
+    "overview": "Singapore's first ASEAN Heritage Park, this wetland reserve is a haven for migratory birds and mangrove wildlife. It features boardwalks through mangroves and mudflats.",
     "difficulty": "Easy",
     "duration": "2-3 hours",
     "amenities": [
-      "Visitor Centre",
-      "Wetland Centre",
-      "Toilets",
-      "Picnic areas",
-      "Bike racks"
+      "Visitor Center",
+      "Restrooms",
+      "Cafe",
+      "Observation Hides"
     ],
-    "transport": {
-      "mrt": "Kranji Station, then Bus 925 (Mon-Sat) or 925M (Sun/PH) to Kranji Reservoir, 15-min walk",
-      "bus": "Bus 925/925M from Kranji MRT Station",
-      "car": "Free parking at Visitor Centre (Kranji Way) and Wetland Centre (Neo Tiew Crescent)"
-    },
+    "transport": "Kranji MRT (NS7), then Bus 925",
     "scenic": [
-      "Migratory Bird Trail - 1.95km wheelchair-friendly path for birdwatching at tidal ponds",
-      "Coastal Trail Pods - 5 photogenic viewing pods including elevated Kingfisher Pod with Johor views"
+      "Migratory Bird Paradise - 231 recorded bird species including whimbrels, plovers, and white-bellied sea eagles.",
+      "Eagle Point - Coastal observation area perfect for sunrise viewing and spotting white-bellied sea eagles.",
+      "Crocodile & Monitor Habitat - Only place in Singapore where saltwater crocodiles can be spotted in their natural habitat."
     ],
-    "mapUrl": "https://maps.app.goo.gl/SungeiBulohWetlandReserve",
-    "hours": "7:00 AM - 7:00 PM daily (Last entry 6:30 PM)"
+    "mapUrl": "https://maps.app.goo.gl/SungeiBuloh",
+    "hours": "7:00 AM - 7:00 PM daily (Last entry 6:30 PM)",
+    "coordinates": {
+      "lat": 1.4396,
+      "lng": 103.7351
+    },
+    "image": "/images/sungei_buloh.jpg"
   },
   {
     "id": "labrador",
     "name": "Labrador Nature Reserve",
-    "overview": "A 22-hectare coastal reserve combining mangrove trails, WWII military heritage sites, and scenic boardwalks with sea views of Keppel Marina and Sentosa Island.",
+    "overview": "A park that offers a unique blend of nature and history. It features the only rocky sea-cliff on the mainland and World War II relics like tunnels and a fort.",
     "difficulty": "Easy",
-    "duration": "1-1.5 hours",
+    "duration": "1-2 hours",
     "amenities": [
-      "3 Restrooms",
-      "2 Playgrounds",
-      "BBQ pits",
-      "Dining nearby"
+      "Restrooms",
+      "Playground",
+      "Fitness Stations"
     ],
-    "transport": {
-      "mrt": "Labrador Park Station (Circle Line), 10-15 minute walk via Labrador Villa Road",
-      "bus": "Buses to Labrador Park or Keppel Road areas",
-      "car": "Free parking at Carparks A, B, C (24 hours, parking fees apply)"
-    },
+    "transport": "Labrador Park MRT (CC27)",
     "scenic": [
-      "Berlayer Creek Mangrove Trail - 500m wooden boardwalk through coastal mangroves and mudflats",
-      "WWII Heritage Trail - Explore Fort Pasir Panjang gun batteries, bunkers, and Dragon's Teeth Gate"
+      "Rocky Sea-Cliff - Singapore's unique coastal geological feature offering tide pool exploration.",
+      "World War II Heritage Sites - Historic British Fort Pasir Panjang relics, bunkers, and artillery monuments.",
+      "Berlayer Creek Mangrove Trail - Scenic 2.1-km coastal boardwalk through pristine mangrove forest."
     ],
-    "mapUrl": "https://maps.app.goo.gl/LabradorNatureReserve",
-    "hours": "Nature Reserve: 7:00 AM - 7:00 PM | Park areas: Open 24 hours"
+    "mapUrl": "https://maps.app.goo.gl/LabradorPark",
+    "hours": "Nature Reserve: 7:00 AM - 7:00 PM | Park areas: Open 24 hours",
+    "coordinates": {
+      "lat": 1.2644,
+      "lng": 103.8045
+    },
+    "image": "/images/labrador.jpg"
   }
 ]

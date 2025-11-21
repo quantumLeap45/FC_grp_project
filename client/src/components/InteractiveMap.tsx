@@ -17,30 +17,18 @@ interface InteractiveMapProps {
   parks: Park[];
 }
 
-const parkCoordinates: Record<string, { lat: number; lng: number }> = {
-  macritchie: { lat: 1.3489, lng: 103.8265 },
-  bukittimah: { lat: 1.3547, lng: 103.7776 },
-  railcorridor: { lat: 1.3635, lng: 103.7644 },
-  coneyisland: { lat: 1.4118, lng: 103.9303 },
-  sungeibuloh: { lat: 1.4453, lng: 103.7299 },
-  labrador: { lat: 1.2718, lng: 103.8024 },
-};
-
 export default function InteractiveMap({ parks }: InteractiveMapProps) {
   const [selectedPark, setSelectedPark] = useState<string | null>(null);
 
   const selectedParkData = parks.find((p) => p.id === selectedPark);
 
-  const centerLat = 1.3521;
-  const centerLng = 103.8198;
-
   const getMapUrl = (parkId: string | null) => {
     if (!parkId) {
       return `https://maps.google.com/maps?q=Singapore&z=11&output=embed`;
     }
-    const coords = parkCoordinates[parkId];
-    if (coords) {
-      return `https://maps.google.com/maps?q=${coords.lat},${coords.lng}&z=14&output=embed`;
+    const park = parks.find(p => p.id === parkId);
+    if (park && park.coordinates) {
+      return `https://maps.google.com/maps?q=${park.coordinates.lat},${park.coordinates.lng}&z=14&output=embed`;
     }
     return `https://maps.google.com/maps?q=Singapore&z=11&output=embed`;
   };
@@ -93,8 +81,8 @@ export default function InteractiveMap({ parks }: InteractiveMapProps) {
                     key={park.id}
                     onClick={() => setSelectedPark(park.id)}
                     className={`w-full text-left p-3 rounded-lg border transition-all hover-elevate active-elevate-2 ${selectedPark === park.id
-                      ? "bg-primary/10 border-primary"
-                      : "bg-background border-border"
+                        ? "bg-primary/10 border-primary"
+                        : "bg-background border-border"
                       }`}
                     data-testid={`button-select-park-${park.id}`}
                   >
