@@ -1,0 +1,158 @@
+Role: You are a senior frontend engineer building a simple, static website (no backend) that matches the Part-1 Design Proposal for “Exploring Singapore’s Green Gems.”
+
+You may search the web to find accurate info and open-licensed images. Prefer official/authoritative sources (e.g., NParks) and Creative Commons images. Cite all sources on the Credits page. If license is unclear, use a placeholder image and only link to the source.
+
+1) Goals
+
+Produce a static, accessible, responsive 6-page site with consistent header (nav boxes) and footer.
+
+Fill each page with concise, paraphrased content from reputable sources; no copy-paste of copyrighted text.
+
+Include both a static map image and a Google Maps link for each park on the Directions page (use open-licensed map imagery or placeholders if licensing is unclear).
+
+2) Pages (exact names & order)
+
+index.html → Home
+
+finder.html → Finder
+
+directions.html → Directions
+
+scenic.html → Scenic
+
+safety.html → Safety
+
+credits.html → Credits
+
+Header (right-side 6 boxes): Home | Finder | Directions | Scenic | Safety | Credits
+Footer: “Made by Team” and “Contact us” (link to Credits)
+
+3) Parks (use this exact set & order everywhere)
+
+MacRitchie Reservoir
+
+Bukit Timah Nature Reserve
+
+Rail Corridor (central)
+
+Coney Island
+
+Sungei Buloh Wetland Reserve
+
+Labrador Nature Reserve
+
+4) Visual system (tokens)
+
+Colors: Light green #A8D5A2, Beige #F5E8D0, Accent dark green #2E7D32, Text #1F2937
+
+Font: Arial, Helvetica, sans-serif
+
+Layout: Header → Main → Footer on every page
+
+Accessibility: WCAG-friendly contrast, focus styles, skip-to-content link, alt text for all images
+
+5) Page requirements
+
+Home (simple 2 blocks over nature background)
+
+Short purpose statement + “What you can do here” line.
+
+Background: open-licensed nature image or placeholder; include alt text.
+
+Finder (single page split into 6 sections)
+
+One section per park with: 1-sentence overview, Difficulty (Easy/Moderate/Hard), Duration (e.g., “45–90 min”), Amenities (toilets/water/shelters).
+
+Use anchor IDs (#macritchie, etc.) and “Back to top” links.
+
+Directions (single page split into 6 sections)
+
+Per park: brief MRT/Bus/Car description (paraphrased) +
+
+a static map image (open-licensed or placeholder) and
+
+a Google Maps link to the trail/park entrance.
+
+Include alt text like “Route from nearest MRT to MacRitchie.”
+
+Scenic (single page split into 6 sections)
+
+Per park: 1–2 scenic highlights, optional YouTube link (no autoplay audio), optional map trail link.
+
+Safety (two columns)
+
+Left: safety & etiquette bullets, weather reminder, packing checklist (water, sun/rain gear, basic first-aid).
+
+Right: illustrative image (open-licensed or placeholder) with alt text.
+
+Credits (and Contact)
+
+Team names (you can leave placeholders).
+
+References list: link and name of each source used (NParks pages, YouTube, Google Maps, images).
+
+Contact/Feedback form (Name, Email, Message) — non-functional (e.g., action="#").
+
+6) File structure
+/green-gems/
+  index.html
+  finder.html
+  directions.html
+  scenic.html
+  safety.html
+  credits.html
+  /assets/
+    /images/   (open-licensed or placeholders)
+    /icons/
+  /styles/
+    main.css   (external stylesheet for all pages)
+  /content/
+    sources.json     (list of citations with titles+URLs+license)
+    parks.json       (the six parks’ data used to fill sections)
+  README.md
+
+7) Data you must gather via web search
+
+For each park: short overview (1–2 sentences), difficulty, duration, amenities, transport (nearest MRT/bus, brief driving note), 1 scenic highlight, map link.
+
+Store structured facts in content/parks.json.
+
+Record all source URLs + image licenses in content/sources.json and list them on Credits.
+
+8) Build guidance
+
+No frameworks; vanilla HTML/CSS; minimal JS for smooth scroll and “back to top.”
+
+Reuse a common header and footer snippet across pages (copy/paste is fine for this assignment).
+
+CSS: build tokens (colors, spacing, font sizes). Ensure responsive behavior for mobile (single column) and desktop.
+
+If an image’s license is unclear, use a neutral placeholder and place a source link only.
+
+9) Quality gates (don’t skip)
+
+All six pages exist; nav works both ways; section anchors work.
+
+Consistent park order across Finder, Directions, Scenic.
+
+All images have alt text; text is legible (≥16px); keyboard focus visible.
+
+Lighthouse (or similar) quick pass ≥90 for Best Practices/Accessibility on localhost.
+
+credits.html lists all sources + image/clip attributions; include one-line AI acknowledgement.
+
+10) Deliverables
+
+Complete project folder as above.
+
+README.md with:
+
+how to open locally
+
+how content was sourced (summary)
+
+known limitations for Part-1 prototype
+
+Brief change log at end of README (what you generated).
+
+Start now. Ask clarifying questions only if something blocks progress; otherwise proceed using best judgment consistent with this PRD.
