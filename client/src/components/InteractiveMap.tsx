@@ -36,13 +36,13 @@ export default function InteractiveMap({ parks }: InteractiveMapProps) {
 
   const getMapUrl = (parkId: string | null) => {
     if (!parkId) {
-      return `https://www.google.com/maps/embed/v1/place?key=&q=Singapore&center=${centerLat},${centerLng}&zoom=11`;
+      return `https://maps.google.com/maps?q=Singapore&z=11&output=embed`;
     }
     const coords = parkCoordinates[parkId];
     if (coords) {
-      return `https://www.google.com/maps/embed/v1/place?key=&q=${coords.lat},${coords.lng}&center=${coords.lat},${coords.lng}&zoom=14`;
+      return `https://maps.google.com/maps?q=${coords.lat},${coords.lng}&z=14&output=embed`;
     }
-    return `https://www.google.com/maps/embed/v1/place?key=&q=Singapore&center=${centerLat},${centerLng}&zoom=11`;
+    return `https://maps.google.com/maps?q=Singapore&z=11&output=embed`;
   };
 
   return (
@@ -52,35 +52,29 @@ export default function InteractiveMap({ parks }: InteractiveMapProps) {
           <Card className="overflow-hidden shadow-lg">
             <CardContent className="p-0">
               <div className="relative w-full" style={{ paddingBottom: "75%" }}>
-                <div className="absolute inset-0 bg-muted/20 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {selectedParkData ? selectedParkData.name : "Select a Park"}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {selectedParkData
-                        ? "Click 'View on Google Maps' to see directions"
-                        : "Choose a park from the list to view its location"}
-                    </p>
-                    {selectedParkData && (
-                      <Button
-                        asChild
-                        size="lg"
-                        data-testid={`button-open-map-${selectedParkData.id}`}
-                      >
-                        <a
-                          href={selectedParkData.mapUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Navigation className="w-4 h-4 mr-2" />
-                          View on Google Maps
-                        </a>
-                      </Button>
-                    )}
+                {selectedPark ? (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    style={{ border: 0, position: "absolute", inset: 0 }}
+                    src={getMapUrl(selectedPark)}
+                    allowFullScreen
+                    title="Park Location"
+                  ></iframe>
+                ) : (
+                  <div className="absolute inset-0 bg-muted/20 flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        Select a Park
+                      </h3>
+                      <p className="text-muted-foreground mb-4">
+                        Choose a park from the list to view its location
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </CardContent>
           </Card>
@@ -98,18 +92,16 @@ export default function InteractiveMap({ parks }: InteractiveMapProps) {
                   <button
                     key={park.id}
                     onClick={() => setSelectedPark(park.id)}
-                    className={`w-full text-left p-3 rounded-lg border transition-all hover-elevate active-elevate-2 ${
-                      selectedPark === park.id
-                        ? "bg-primary/10 border-primary"
-                        : "bg-background border-border"
-                    }`}
+                    className={`w-full text-left p-3 rounded-lg border transition-all hover-elevate active-elevate-2 ${selectedPark === park.id
+                      ? "bg-primary/10 border-primary"
+                      : "bg-background border-border"
+                      }`}
                     data-testid={`button-select-park-${park.id}`}
                   >
                     <div className="flex items-start gap-2">
                       <MapPin
-                        className={`w-4 h-4 mt-1 flex-shrink-0 ${
-                          selectedPark === park.id ? "text-primary" : "text-muted-foreground"
-                        }`}
+                        className={`w-4 h-4 mt-1 flex-shrink-0 ${selectedPark === park.id ? "text-primary" : "text-muted-foreground"
+                          }`}
                       />
                       <div className="flex-1 min-w-0">
                         <div className="font-medium text-foreground text-sm mb-1">

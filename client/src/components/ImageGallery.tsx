@@ -54,13 +54,12 @@ export default function ImageGallery({ parkName, images }: ImageGalleryProps) {
                 className="relative aspect-square overflow-hidden rounded-lg border border-border hover-elevate active-elevate-2 group"
                 data-testid={`button-image-${index}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <ImageIcon className="w-8 h-8 text-primary mx-auto mb-2" />
-                    <div className="text-xs text-foreground font-medium px-2">
-                      {parkName} Photo {index + 1}
-                    </div>
-                  </div>
+                <div className="absolute inset-0">
+                  <img
+                    src={image}
+                    alt={`${parkName} Photo ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
                 <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/5 transition-colors"></div>
               </button>
@@ -84,23 +83,14 @@ export default function ImageGallery({ parkName, images }: ImageGalleryProps) {
               </Button>
             </div>
 
-            <div className="relative bg-muted/30" style={{ minHeight: "400px" }}>
-              <div className="flex items-center justify-center p-12">
-                <div className="text-center">
-                  <ImageIcon className="w-24 h-24 text-primary mx-auto mb-4" />
-                  <div className="text-xl font-semibold text-foreground mb-2">
-                    {parkName}
-                  </div>
-                  {selectedIndex !== null && (
-                    <div className="text-muted-foreground">
-                      Photo {selectedIndex + 1} of {images.length}
-                    </div>
-                  )}
-                  <div className="text-sm text-muted-foreground mt-4 max-w-md">
-                    This is a placeholder for park images. Real images would be displayed here with proper licensing and attribution.
-                  </div>
-                </div>
-              </div>
+            <div className="relative bg-black/90 flex items-center justify-center" style={{ minHeight: "400px", maxHeight: "80vh" }}>
+              {selectedIndex !== null && (
+                <img
+                  src={images[selectedIndex]}
+                  alt={`${parkName} Photo ${selectedIndex + 1}`}
+                  className="max-w-full max-h-[80vh] object-contain"
+                />
+              )}
             </div>
 
             {selectedIndex !== null && images.length > 1 && (

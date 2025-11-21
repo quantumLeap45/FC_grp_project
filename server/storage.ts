@@ -1,5 +1,5 @@
-import { 
-  type User, 
+import {
+  type User,
   type InsertUser,
   type ContactMessage,
   type InsertContactMessage,
@@ -56,8 +56,8 @@ export class MemStorage implements IStorage {
 
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {
     const id = randomUUID();
-    const message: ContactMessage = { 
-      ...insertMessage, 
+    const message: ContactMessage = {
+      ...insertMessage,
       id,
       createdAt: new Date()
     };
@@ -67,8 +67,8 @@ export class MemStorage implements IStorage {
 
   async createParkReview(insertReview: InsertParkReview): Promise<ParkReview> {
     const id = randomUUID();
-    const review: ParkReview = { 
-      ...insertReview, 
+    const review: ParkReview = {
+      ...insertReview,
       id,
       createdAt: new Date()
     };
@@ -90,31 +90,37 @@ export class MemStorage implements IStorage {
 
 export class DbStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
+    if (!db) throw new Error("Database not initialized");
     const [user] = await db.select().from(users).where(eq(users.id, id));
     return user;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
+    if (!db) throw new Error("Database not initialized");
     const [user] = await db.select().from(users).where(eq(users.username, username));
     return user;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
+    if (!db) throw new Error("Database not initialized");
     const [user] = await db.insert(users).values(insertUser).returning();
     return user;
   }
 
   async createContactMessage(insertMessage: InsertContactMessage): Promise<ContactMessage> {
+    if (!db) throw new Error("Database not initialized");
     const [message] = await db.insert(contactMessages).values(insertMessage).returning();
     return message;
   }
 
   async createParkReview(insertReview: InsertParkReview): Promise<ParkReview> {
+    if (!db) throw new Error("Database not initialized");
     const [review] = await db.insert(parkReviews).values(insertReview).returning();
     return review;
   }
 
   async getParkReviews(parkId: string, limit: number = 10, offset: number = 0): Promise<ParkReview[]> {
+    if (!db) throw new Error("Database not initialized");
     const reviews = await db
       .select()
       .from(parkReviews)
@@ -126,6 +132,7 @@ export class DbStorage implements IStorage {
   }
 
   async getAllReviews(limit: number = 50, offset: number = 0): Promise<ParkReview[]> {
+    if (!db) throw new Error("Database not initialized");
     const reviews = await db
       .select()
       .from(parkReviews)
@@ -136,4 +143,4 @@ export class DbStorage implements IStorage {
   }
 }
 
-export const storage = new DbStorage();
+export const storage = process.env.DATABASE_URL ? new DbStorage() : new MemStorage();
