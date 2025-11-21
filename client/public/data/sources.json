@@ -1,0 +1,70 @@
+{
+  "references": [
+    {
+      "title": "MacRitchie Reservoir Park - Central Catchment Nature Reserve",
+      "url": "https://www.nparks.gov.sg/visit/parks/central-catchment-nature-reserve",
+      "type": "Park Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Bukit Timah Nature Reserve Official Page",
+      "url": "https://www.nparks.gov.sg/visit/parks/bukit-timah-nature-reserve",
+      "type": "Park Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Rail Corridor Official Website",
+      "url": "https://railcorridor.nparks.gov.sg/",
+      "type": "Trail Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Coney Island Park Information",
+      "url": "https://www.nparks.gov.sg/visit/parks/coney-island-park",
+      "type": "Park Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Sungei Buloh Wetland Reserve",
+      "url": "https://www.nparks.gov.sg/visit/parks/sungei-buloh-wetland-reserve",
+      "type": "Park Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Labrador Nature Reserve and Park",
+      "url": "https://www.nparks.gov.sg/visit/parks/labrador-nature-reserve",
+      "type": "Park Information",
+      "license": "Public Domain (Government Source)"
+    },
+    {
+      "title": "Google Maps - Park Directions",
+      "url": "https://maps.google.com",
+      "type": "Mapping Service",
+      "license": "Used under Google Maps Terms of Service"
+    }
+  ],
+  "images": [
+    {
+      "description": "Hero background - Singapore nature landscape",
+      "source": "Placeholder/Stock imagery",
+      "license": "To be replaced with open-licensed content"
+    },
+    {
+      "description": "Park trail maps and route images",
+      "source": "Placeholder/Reference to official sources",
+      "license": "Educational fair use with attribution"
+    },
+    {
+      "description": "Safety and hiking gear illustration",
+      "source": "Stock imagery placeholder",
+      "license": "To be replaced with open-licensed content"
+    }
+  ],
+  "acknowledgment": "Content paraphrased from official NParks sources. AI assistance used for website development and content organization.",
+  "team": [
+    {
+      "name": "Development Team",
+      "role": "Website Creation"
+    }
+  ]
+}
