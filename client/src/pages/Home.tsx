@@ -1,6 +1,24 @@
+import { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
+import InteractiveMap from "@/components/InteractiveMap";
+
+interface Park {
+  id: string;
+  name: string;
+  overview: string;
+  difficulty: string;
+  mapUrl: string;
+}
 
 export default function Home() {
+  const [parks, setParks] = useState<Park[]>([]);
+
+  useEffect(() => {
+    fetch("/data/parks.json")
+      .then((res) => res.json())
+      .then((data) => setParks(data))
+      .catch((err) => console.error("Failed to load parks data:", err));
+  }, []);
   return (
     <Layout>
       <div className="relative">
@@ -65,6 +83,18 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
+              </div>
+
+              <div className="mt-16">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                    Explore Park Locations
+                  </h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Select a park to view its location and get directions
+                  </p>
+                </div>
+                {parks.length > 0 && <InteractiveMap parks={parks} />}
               </div>
             </div>
           </div>

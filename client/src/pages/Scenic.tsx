@@ -3,12 +3,22 @@ import Layout from "@/components/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, ChevronUp } from "lucide-react";
+import ImageGallery from "@/components/ImageGallery";
 
 interface Park {
   id: string;
   name: string;
   scenic: string[];
 }
+
+const galleryImages: Record<string, string[]> = {
+  macritchie: ["img1", "img2", "img3", "img4"],
+  bukittimah: ["img1", "img2", "img3"],
+  railcorridor: ["img1", "img2", "img3", "img4", "img5"],
+  coneyisland: ["img1", "img2", "img3", "img4"],
+  sungeibuloh: ["img1", "img2", "img3", "img4", "img5", "img6"],
+  labrador: ["img1", "img2", "img3"],
+};
 
 export default function Scenic() {
   const [parks, setParks] = useState<Park[]>([]);
@@ -88,6 +98,13 @@ export default function Scenic() {
                         </div>
                       );
                     })}
+                  </div>
+
+                  <div className="pt-6">
+                    <ImageGallery 
+                      parkName={park.name}
+                      images={galleryImages[park.id] || []}
+                    />
                   </div>
 
                   <div className="pt-4 border-t border-border">

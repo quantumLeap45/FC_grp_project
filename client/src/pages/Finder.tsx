@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, TrendingUp, Droplets, Home as Toilet, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import PrintableGuide from "@/components/PrintableGuide";
 
 interface Park {
   id: string;
@@ -13,6 +14,12 @@ interface Park {
   duration: string;
   amenities: string[];
   hours: string;
+  transport: {
+    mrt: string;
+    bus: string;
+    car: string;
+  };
+  scenic: string[];
 }
 
 export default function Finder() {
@@ -132,7 +139,7 @@ export default function Finder() {
                     </div>
                   </div>
 
-                  <div className="pt-4 border-t border-border">
+                  <div className="pt-4 border-t border-border flex items-center justify-between gap-4 flex-wrap">
                     <a
                       href="#top"
                       onClick={(e) => {
@@ -145,6 +152,7 @@ export default function Finder() {
                       <ChevronUp className="w-4 h-4" />
                       Back to top
                     </a>
+                    <PrintableGuide park={park} />
                   </div>
                 </CardContent>
               </Card>

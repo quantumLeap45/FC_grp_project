@@ -6,6 +6,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Users, FileText, Mail } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 
 interface Source {
   title: string;
@@ -30,6 +33,8 @@ interface SourcesData {
 
 export default function Credits() {
   const [sources, setSources] = useState<SourcesData | null>(null);
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const { toast } = useToast();
 
   useEffect(() => {
     fetch("/data/sources.json")
@@ -38,9 +43,30 @@ export default function Credits() {
       .catch((err) => console.error("Failed to load sources data:", err));
   }, []);
 
+  const contactMutation = useMutation({
+    mutationFn: async (data: { name: string; email: string; message: string }) => {
+      const res = await apiRequest("POST", "/api/contact", data);
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for contacting us. We'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! (This is a non-functional demo form)");
+    contactMutation.mutate(formData);
   };
 
   return (
@@ -154,6 +180,8 @@ export default function Credits() {
                       required
                       className="text-base"
                       data-testid="input-name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
                   </div>
 
@@ -168,6 +196,8 @@ export default function Credits() {
                       required
                       className="text-base"
                       data-testid="input-email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
                   </div>
 
@@ -182,6 +212,8 @@ export default function Credits() {
                       rows={6}
                       className="text-base resize-none"
                       data-testid="textarea-message"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
                   </div>
 
@@ -190,13 +222,10 @@ export default function Credits() {
                     size="lg"
                     className="w-full sm:w-auto"
                     data-testid="button-submit"
+                    disabled={contactMutation.isPending}
                   >
-                    Send Message
+                    {contactMutation.isPending ? "Sending..." : "Send Message"}
                   </Button>
-
-                  <p className="text-sm text-muted-foreground italic">
-                    Note: This is a demonstration form and does not send actual messages.
-                  </p>
                 </form>
               </CardContent>
             </Card>

@@ -14,6 +14,7 @@ export default function Layout({ children }: LayoutProps) {
     { path: "/directions", label: "Directions" },
     { path: "/scenic", label: "Scenic" },
     { path: "/safety", label: "Safety" },
+    { path: "/reviews", label: "Reviews" },
     { path: "/credits", label: "Credits" },
   ];
 

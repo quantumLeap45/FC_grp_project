@@ -9,6 +9,7 @@ import Directions from "@/pages/Directions";
 import Scenic from "@/pages/Scenic";
 import Safety from "@/pages/Safety";
 import Credits from "@/pages/Credits";
+import Reviews from "@/pages/Reviews";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/directions" component={Directions} />
       <Route path="/scenic" component={Scenic} />
       <Route path="/safety" component={Safety} />
+      <Route path="/reviews" component={Reviews} />
       <Route path="/credits" component={Credits} />
       <Route component={NotFound} />
     </Switch>
